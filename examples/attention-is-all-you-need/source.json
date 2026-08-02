@@ -1,0 +1,35 @@
+{
+  "title": "Attention Is All You Need",
+  "authors": "Ashish Vaswani et al.",
+  "venue": "NeurIPS 2017",
+  "arxiv_id": "1706.03762",
+  "arxiv_version": "v7",
+  "arxiv_version_date": "2023-08-02",
+  "source_url": "https://arxiv.org/abs/1706.03762",
+  "source_page": 4,
+  "derived_assets": {
+    "input_pdf": {
+      "path": "input.pdf",
+      "sha256": "76feebd5c03ee425c38748a9be68b6ac5094f60d219eaa163b2a8d3422cfabad",
+      "text_layer": false
+    },
+    "input_webp": {
+      "path": "input.webp",
+      "sha256": "14aed581e680365e94925342d5928bf3cb117f52020995638526c805fbff9014"
+    },
+    "showcase_english": {
+      "path": "showcase.webp",
+      "sha256": "b33f92ad122542c8aa9c9ddb7b8d06c2913107499dc8332ee6ac84311490d2cc"
+    },
+    "showcase_chinese": {
+      "path": "showcase.zh-CN.webp",
+      "sha256": "60beb233c15083e42fa639c244e03d3046e71c9309486ac9eb5acfe64d4d5834"
+    }
+  },
+  "modifications": [
+    "Rasterized page 4",
+    "Added the paper title, venue, year, and author attribution above the original page"
+  ],
+  "permission_notice": "Provided proper attribution is provided, Google hereby grants permission to reproduce the tables and figures in this paper solely for use in journalistic or scholarly works.",
+  "repository_license": "Excluded from the doc7 MIT license; included for attributed scholarly evaluation"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "olmOCR-Bench",
+  "upstream_repository": "https://github.com/allenai/olmocr",
+  "upstream_commit": "f7cfe4c22098b154c76b6ec950d1c0a464eecf8d",
+  "dataset_repository": "https://huggingface.co/datasets/allenai/olmOCR-bench",
+  "dataset_revision": "54a96a6fb6a2bd3b297e59869491db4d3625b711",
+  "dataset_license": "ODC-BY-1.0",
+  "documents": 1403,
+  "tests": 7010,
+  "categories": [
+    "arxiv_math",
+    "headers_footers",
+    "long_tiny_text",
+    "multi_column",
+    "old_scans",
+    "old_scans_math",
+    "table_tests"
+  ],
+  "output_pattern": "<relative-pdf-without-extension>_pg1_repeat<N>.md",
+  "scoring": "Use the pinned upstream olmOCR-Bench checker; do not infer a full score from a smoke run."
+}

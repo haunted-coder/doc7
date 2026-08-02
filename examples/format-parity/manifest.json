@@ -1,0 +1,39 @@
+{
+  "case": "visual-report-format-parity",
+  "source": {
+    "path": "../visual-report/input.png",
+    "sha256": "8ddb1af814cab0b655829e18f96a9bcc3dd165b8e3f60fcd0950a76200bcfd16"
+  },
+  "model": "qwen3.5-4b",
+  "prompt": {
+    "path": "faithful-visual-prompt.txt",
+    "sha256": "a375d6c440df9669535b2135b8150cbf92d8f02b5168eff856304a8166122cb7"
+  },
+  "score_method": "benchmarks/visual-report/ground-truth.json content-presence rules",
+  "artifacts": [
+    {
+      "container": "PDF",
+      "input": "../visual-report/input.pdf",
+      "input_sha256": "6b65b940e1138aab75eabead776af1708a8c0c23c491f63f48678f7cb2c7c5ed",
+      "output": "output-pdf.md",
+      "output_sha256": "5805179386ce41046702ed692efedc53a9363a8fa1575e5daf86036e5f0b9a62",
+      "score": "8/8"
+    },
+    {
+      "container": "DOCX",
+      "input": "input.docx",
+      "input_sha256": "7a409ca8dcd936e76c6f21e41fb2c13d4b3a1fe8b6df54e821877f2acad4638b",
+      "output": "output-docx.md",
+      "output_sha256": "ca8eeffbe42d25678ba3eb5dcf833c585f868950baa523734aaac316dc75345f",
+      "score": "8/8"
+    },
+    {
+      "container": "PPTX",
+      "input": "input.pptx",
+      "input_sha256": "23bab07e3c94ef6d222c0bb6ea63f99c464ffe2738367efa4bbe60db131f0c26",
+      "output": "output-pptx.md",
+      "output_sha256": "6d071ef8bdfdaab9ac180e774905f1eeb7ae819d66c4fa27b6b36fda4c4b5aa5",
+      "score": "8/8"
+    }
+  ]
+}

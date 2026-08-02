@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "libreoffice": {
+    "name": "LibreOffice Portable",
+    "version": "26.2.4",
+    "archive_url": "https://download.documentfoundation.org/libreoffice/portable/26.2.4/LibreOfficePortable_26.2.4_MultilingualStandard.paf.exe",
+    "archive_sha256": "4bde93374aef4409243505b20d16561a4628ac7591457dd01fc6e1ccf571ba65",
+    "source_url": "https://download.documentfoundation.org/libreoffice/src/26.2.4/",
+    "license": "MPL-2.0",
+    "portable_launcher_license": "GPL-2.0-only"
+  },
+  "mupdf": {
+    "name": "MuPDF",
+    "version": "1.28.0",
+    "archive_url": "https://casper.mupdf.com/downloads/archive/mupdf-1.28.0-windows.zip",
+    "archive_sha256": "a0ee869bf38ee66b19cd30c281d04e91215f812f0cb20177cd1f69c74c33eb22",
+    "source_url": "https://casper.mupdf.com/downloads/archive/mupdf-1.28.0-source.tar.gz",
+    "source_sha256": "21c7f064903154f1c3a7458bee81f130fc36f9b5147ea13328f9980e02d2dea2",
+    "license": "AGPL-3.0-or-later"
+  }
+}

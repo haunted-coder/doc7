@@ -1,0 +1,31 @@
+services:
+  doc7:
+    build:
+      context: .
+      args:
+        HTTP_PROXY: ${DOC7_BUILD_HTTP_PROXY:-}
+        HTTPS_PROXY: ${DOC7_BUILD_HTTPS_PROXY:-}
+    image: ${DOC7_IMAGE:-ghcr.io/magicrew/doc7:latest}
+    restart: unless-stopped
+    init: true
+    ports:
+      - "${DOC7_PORT:-8787}:8787"
+    environment:
+      DOC7_BASE_URL: ${DOC7_BASE_URL:-http://host.docker.internal:1234/v1}
+      DOC7_MODEL: ${DOC7_MODEL:?set DOC7_MODEL before starting the service}
+      DOC7_CREDENTIAL_STORE: env
+      DOC7_API_KEY: ${DOC7_API_KEY:-}
+      DOC7_SERVER_TOKEN: ${DOC7_SERVER_TOKEN:?set DOC7_SERVER_TOKEN before starting the service}
+      DOC7_TIMEOUT_SECONDS: ${DOC7_TIMEOUT_SECONDS:-600}
+    volumes:
+      - doc7-config:/config
+      - doc7-data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 40s
+
+volumes:
+  doc7-config:
+  doc7-data:

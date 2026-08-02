@@ -1,0 +1,90 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Require an open-source license
+        run: test -s LICENSE
+
+      - name: Verify repository size policy
+        run: bash scripts/check-repository-size.sh
+
+      - name: Verify public source policy
+        run: bash scripts/check-public-source.sh
+
+      - name: Verify source
+        run: |
+          go mod verify
+          test -z "$(gofmt -l .)"
+          go test ./...
+          go vet ./...
+          go run ./scripts/score_benchmark.go benchmarks/visual-report/ground-truth.json
+
+      - name: Scan reachable vulnerabilities
+        run: go run golang.org/x/vuln/cmd/govulncheck@v1.6.0 ./...
+
+      - name: Build release artifacts
+        env:
+          DOC7_BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          export DOC7_BUILD_DATE="$(git show -s --format=%cI HEAD)"
+          bash scripts/build-release.sh "${GITHUB_REF_NAME}"
+
+      - name: Verify release artifacts
+        run: |
+          release_dir="dist/releases/${GITHUB_REF_NAME}"
+          cd "${release_dir}"
+          sha256sum -c checksums.txt
+          test "$(find . -maxdepth 1 -type f \( -name '*.tar.gz' -o -name '*.zip' \) | wc -l)" -eq 6
+          test ! -e stage
+          for archive in ./*.zip; do
+            listing="$(zipinfo -1 "${archive}")"
+            test "$(printf '%s\n' "${listing}" | grep -Ec '^[^/]+/LICENSE$')" -eq 1
+            longest="$(printf '%s\n' "${listing}" | awk '{ if (length > max) max = length } END { print max + 0 }')"
+            test "${longest}" -le 120
+          done
+          for archive in ./*.tar.gz; do
+            listing="$(tar -tzf "${archive}")"
+            test "$(printf '%s\n' "${listing}" | grep -Ec '^[^/]+/LICENSE$')" -eq 1
+          done
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "${GITHUB_REF_NAME}"
+          "dist/releases/${GITHUB_REF_NAME}"/*.tar.gz
+          "dist/releases/${GITHUB_REF_NAME}"/*.zip
+          "dist/releases/${GITHUB_REF_NAME}/checksums.txt"
+          --generate-notes
+          --verify-tag
+
+  portable:
+    name: Publish Windows portable
+    needs: release
+    permissions:
+      contents: write
+    uses: ./.github/workflows/portable.yml
+    with:
+      version: ${{ github.ref_name }}
+      commit: ${{ github.sha }}

@@ -1,0 +1,121 @@
+{
+  "case": "visual-report",
+  "input": {
+    "path": "../../examples/visual-report/input.pdf",
+    "sha256": "6b65b940e1138aab75eabead776af1708a8c0c23c491f63f48678f7cb2c7c5ed"
+  },
+  "systems": [
+    {
+      "id": "doc7",
+      "label": "doc7 + qwen3.5-9b",
+      "output": "doc7-output.md",
+      "sha256": "83a917e0dd43cb23073c383cacb4b19493d80712abdd01717f772a5aa504ac06"
+    },
+    {
+      "id": "markitdown-ocr-qwen",
+      "label": "MarkItDown 0.1.6 + OCR plugin 0.1.0 + qwen3.5-9b",
+      "output": "markitdown-ocr-output.md",
+      "sha256": "f861dee8e8c9b3b81bfd8d730c74baa6031324e5c2c1e3431ce833c9f3802654"
+    },
+    {
+      "id": "docling-standard",
+      "label": "Docling 2.113.0 standard",
+      "output": "docling-standard-output.md",
+      "sha256": "7dd2ba8477bf1410cbb966c98ba0d5bb039c473693f5151e40fc57e42a7d8d42"
+    },
+    {
+      "id": "markitdown-default",
+      "label": "MarkItDown 0.1.6 default",
+      "output": "markitdown-default-output.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "diagnostic",
+      "note": "The raster-only PDF produced an empty default-path output, so this configuration is shown as N/A rather than assigned a capability score."
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "document_identity",
+      "label": "Document text",
+      "patterns": [
+        "Q4\\s+Product\\s+Health\\s+Report",
+        "synthetic\\s+visual\\s+document\\s+for\\s+testing\\s+document-to-Markdown\\s+understanding"
+      ]
+    },
+    {
+      "id": "kpi_cards",
+      "label": "KPI cards",
+      "patterns": [
+        "Annual\\s+recurring\\s+revenue",
+        "\\$2\\.4M",
+        "\\+18%",
+        "Net\\s+revenue\\s+retention",
+        "112%",
+        "above\\s+105%\\s+target",
+        "Support\\s+SLA",
+        "94%",
+        "-2\\s+pts\\s+vs\\s+Q3",
+        "Active\\s+teams",
+        "148",
+        "\\+23\\s+this\\s+quarter"
+      ]
+    },
+    {
+      "id": "retention_chart",
+      "label": "Chart",
+      "patterns": [
+        "Q1[\\s*_`]*(?:=|:)?[\\s*_`]*98%",
+        "Q2[\\s*_`]*(?:=|:)?[\\s*_`]*103%",
+        "Q3[\\s*_`]*(?:=|:)?[\\s*_`]*108%",
+        "Q4[\\s*_`]*(?:=|:)?[\\s*_`]*112%",
+        "(?:line\\s+rises|upward\\s+trend)"
+      ]
+    },
+    {
+      "id": "operating_table",
+      "label": "Table",
+      "patterns": [
+        "Self-serve[\\s|]+62%[\\s|]+4\\.2\\s+min[\\s|]+Low",
+        "Human\\s+support[\\s|]+28%[\\s|]+18\\.5\\s+min[\\s|]+Medium",
+        "Escalation[\\s|]+10%[\\s|]+2\\.6\\s+hr[\\s|]+High"
+      ]
+    },
+    {
+      "id": "formula_semantics",
+      "label": "Formula",
+      "patterns": [
+        "NRR",
+        "S\\s*\\+\\s*E\\s*-\\s*C\\s*-\\s*(?:Ch|\\\\text\\{Ch\\})",
+        "/\\s*S",
+        "starting\\s+MRR",
+        "expansion",
+        "contraction",
+        "churn"
+      ]
+    },
+    {
+      "id": "formula_latex",
+      "label": "LaTeX",
+      "patterns": [
+        "\\$\\$",
+        "S\\s*\\+\\s*E\\s*-\\s*C\\s*-\\s*(?:Ch|\\\\text\\{Ch\\})"
+      ]
+    },
+    {
+      "id": "knowledge_workflow",
+      "label": "Workflow",
+      "patterns": [
+        "Import.{0,80}Understand.{0,80}Search.{0,80}Act"
+      ]
+    },
+    {
+      "id": "application_state",
+      "label": "UI state",
+      "patterns": [
+        "Customer\\s+export",
+        "83%\\s+complete",
+        "destination\\s+unavailable",
+        "Retry\\s+after\\s+reconnecting\\s+the\\s+workspace"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "case": "attention-is-all-you-need",
+  "input": {
+    "path": "../../examples/attention-is-all-you-need/input.pdf",
+    "sha256": "76feebd5c03ee425c38748a9be68b6ac5094f60d219eaa163b2a8d3422cfabad"
+  },
+  "scores": [
+    {
+      "system": "doc7",
+      "label": "doc7 + qwen3.5-9b",
+      "output": "doc7-output.md",
+      "output_sha256": "aeec142191149d24b5fdeb422fa7e28af4ec2eaf24244643622835e2a98659c5",
+      "output_bytes": 3501,
+      "scored": true,
+      "passed": 7,
+      "total": 7,
+      "capabilities": {
+        "attention_equation": true,
+        "figure_identity": true,
+        "footnote_semantics": true,
+        "identity": true,
+        "multi_head_flow": true,
+        "scaled_attention_flow": true,
+        "scaling_rationale": true
+      }
+    },
+    {
+      "system": "markitdown-ocr",
+      "label": "MarkItDown 0.1.6 + OCR 0.1.0 + qwen3.5-9b",
+      "output": "markitdown-ocr-output.md",
+      "output_sha256": "c70b2fdeef95a7e696448b9fdd7979d97f72d2282d3977d2a44348fe9380cf10",
+      "output_bytes": 9580,
+      "scored": true,
+      "passed": 3,
+      "total": 7,
+      "capabilities": {
+        "attention_equation": false,
+        "figure_identity": true,
+        "footnote_semantics": true,
+        "identity": true,
+        "multi_head_flow": false,
+        "scaled_attention_flow": false,
+        "scaling_rationale": false
+      }
+    },
+    {
+      "system": "docling-standard",
+      "label": "Docling 2.113.0 standard",
+      "output": "docling-standard-output.md",
+      "output_sha256": "5c5e2e17f656a143265295eb7acb2bcd56f76303df6111eac6f5db6b95c40438",
+      "output_bytes": 282603,
+      "scored": true,
+      "passed": 1,
+      "total": 7,
+      "capabilities": {
+        "attention_equation": false,
+        "figure_identity": true,
+        "footnote_semantics": false,
+        "identity": false,
+        "multi_head_flow": false,
+        "scaled_attention_flow": false,
+        "scaling_rationale": false
+      }
+    },
+    {
+      "system": "markitdown-default",
+      "label": "MarkItDown 0.1.6 default",
+      "output": "markitdown-default-output.md",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0,
+      "scored": false,
+      "note": "The raster-only PDF produced an empty default-path output, so this configuration is shown as N/A rather than assigned a capability score.",
+      "passed": 0,
+      "total": 7,
+      "capabilities": {}
+    }
+  ]
+}

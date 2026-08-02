@@ -1,0 +1,25 @@
+.DS_Store
+
+# Local processing results and release bundles.
+output/
+dist/
+/tools/
+doc7-server/
+.review/
+
+# Local configuration and generated document outputs.
+.doc7.yaml
+.doc7.local.yaml
+*-doc7/
+*_output/
+
+# Runtime logs and temporary files.
+*.log
+*.tmp
+*.swp
+*.exe
+*.dll
+*.dylib
+*.so
+*.tar
+*.tar.gz

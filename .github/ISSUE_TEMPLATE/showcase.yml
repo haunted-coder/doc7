@@ -1,0 +1,50 @@
+name: Showcase
+description: Share a document that doc7 converted especially well
+title: "[Showcase] "
+body:
+  - type: markdown
+    attributes:
+      value: Share only documents and outputs that you are allowed to publish.
+  - type: input
+    id: input_type
+    attributes:
+      label: Input type
+      placeholder: PDF report, presentation, spreadsheet dashboard, scanned page, or screenshot
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and runtime
+      placeholder: qwen3.5-4b through LM Studio
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: What did doc7 preserve or understand?
+      placeholder: Describe the chart, formula, table, diagram, screenshot, or page structure that mattered.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: Remove API keys and private endpoint details.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Shareable input and output
+      description: Attach a preview and Markdown output, or provide public links.
+    validations:
+      required: true
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Showcase permission
+      options:
+        - label: The doc7 project may reference these public artifacts in examples or release notes.
+          required: true

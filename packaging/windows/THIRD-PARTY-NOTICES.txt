@@ -1,0 +1,41 @@
+doc7 Windows renderer notices
+=============================
+
+This package may contain third-party renderer binaries under tools/. Those
+binaries are distributed under their own licenses and are not part of doc7's
+source code license.
+
+LibreOffice Portable 26.2.4
+---------------------------
+The portable LibreOffice files are downloaded from The Document Foundation
+using the version and SHA-256 recorded in runtime.lock.json. LibreOffice is
+distributed under the Mozilla Public License 2.0 and includes third-party
+components under the licenses listed in its own license file. The
+PortableApps.com launcher source and GNU General Public License version 2 are
+included by the upstream package under Other\Source.
+
+The complete LibreOffice license and notice files are shipped inside:
+
+  tools\LibreOfficePortable\App\libreoffice\
+
+See the license.txt, NOTICE, and README files in that directory. Project
+information, license terms, and source releases are available at:
+
+  https://www.libreoffice.org/licenses/
+  https://download.documentfoundation.org/libreoffice/src/26.2.4/
+
+MuPDF 1.28.0
+------------
+The included mutool.exe is the official Artifex open-source Windows release
+and is distributed under the GNU Affero General Public License version 3 or
+later. Its COPYING.txt, README.txt, CHANGES.txt, and CONTRIBUTORS.txt files are
+shipped under tools\mupdf. The exact corresponding source archive is published
+beside the portable ZIP in the portable-latest GitHub Release.
+
+The source and license information are available at:
+
+  https://casper.mupdf.com/downloads/archive/mupdf-1.28.0-source.tar.gz
+  https://mupdf.readthedocs.io/en/latest/license.html
+
+The doc7 project does not grant rights to redistribute or relicense these
+third-party binaries beyond the terms supplied by their respective owners.

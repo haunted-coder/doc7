@@ -1,0 +1,12 @@
+provider: openai-compatible
+base_url: http://localhost:8000/v1
+model: local-vlm
+api_key_env: DOC7_API_KEY
+file_workers: 1
+workers: 5
+dpi: 220
+image_detail: high
+max_image_mb: 9
+timeout_seconds: 120
+retry_count: 3
+prompt: auto

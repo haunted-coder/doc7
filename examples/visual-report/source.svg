@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200">
+  <rect width="1600" height="2200" fill="#f5f7fb"/>
+  <rect x="72" y="64" width="1456" height="2072" rx="18" fill="#ffffff" stroke="#d9e0ea" stroke-width="2"/>
+
+  <text x="132" y="150" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#172033">Q4 Product Health Report</text>
+  <text x="132" y="196" font-family="Arial, sans-serif" font-size="22" fill="#5d6b82">A synthetic visual document for testing document-to-Markdown understanding</text>
+  <line x1="132" y1="236" x2="1468" y2="236" stroke="#d9e0ea" stroke-width="2"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="132" y="278" width="304" height="154" rx="12" fill="#eef5ff"/>
+    <text x="160" y="322" font-size="20" fill="#53637d">Annual recurring revenue</text>
+    <text x="160" y="382" font-size="42" font-weight="700" fill="#1d4ed8">$2.4M</text>
+    <text x="160" y="414" font-size="18" fill="#15803d">+18% vs Q3</text>
+
+    <rect x="462" y="278" width="304" height="154" rx="12" fill="#eefbf5"/>
+    <text x="490" y="322" font-size="20" fill="#53637d">Net revenue retention</text>
+    <text x="490" y="382" font-size="42" font-weight="700" fill="#047857">112%</text>
+    <text x="490" y="414" font-size="18" fill="#15803d">above 105% target</text>
+
+    <rect x="792" y="278" width="304" height="154" rx="12" fill="#fff8e8"/>
+    <text x="820" y="322" font-size="20" fill="#53637d">Support SLA</text>
+    <text x="820" y="382" font-size="42" font-weight="700" fill="#b45309">94%</text>
+    <text x="820" y="414" font-size="18" fill="#b45309">-2 pts vs Q3</text>
+
+    <rect x="1122" y="278" width="346" height="154" rx="12" fill="#f5efff"/>
+    <text x="1150" y="322" font-size="20" fill="#53637d">Active teams</text>
+    <text x="1150" y="382" font-size="42" font-weight="700" fill="#6d28d9">148</text>
+    <text x="1150" y="414" font-size="18" fill="#6d28d9">+23 this quarter</text>
+  </g>
+
+  <text x="132" y="506" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172033">Retention trend</text>
+  <text x="132" y="542" font-family="Arial, sans-serif" font-size="19" fill="#5d6b82">Expansion revenue is offsetting contraction and churn.</text>
+
+  <g font-family="Arial, sans-serif">
+    <line x1="180" y1="920" x2="820" y2="920" stroke="#7d8aa0" stroke-width="2"/>
+    <line x1="180" y1="620" x2="180" y2="920" stroke="#7d8aa0" stroke-width="2"/>
+    <line x1="180" y1="845" x2="820" y2="845" stroke="#e3e8f0"/>
+    <line x1="180" y1="770" x2="820" y2="770" stroke="#e3e8f0"/>
+    <line x1="180" y1="695" x2="820" y2="695" stroke="#e3e8f0"/>
+    <text x="142" y="926" font-size="18" fill="#5d6b82">90%</text>
+    <text x="142" y="851" font-size="18" fill="#5d6b82">100%</text>
+    <text x="142" y="776" font-size="18" fill="#5d6b82">110%</text>
+    <text x="142" y="701" font-size="18" fill="#5d6b82">120%</text>
+    <polyline points="260,860 420,815 580,765 740,710" fill="none" stroke="#2563eb" stroke-width="8"/>
+    <circle cx="260" cy="860" r="11" fill="#ffffff" stroke="#2563eb" stroke-width="6"/>
+    <circle cx="420" cy="815" r="11" fill="#ffffff" stroke="#2563eb" stroke-width="6"/>
+    <circle cx="580" cy="765" r="11" fill="#ffffff" stroke="#2563eb" stroke-width="6"/>
+    <circle cx="740" cy="710" r="11" fill="#ffffff" stroke="#2563eb" stroke-width="6"/>
+    <text x="238" y="964" font-size="20" fill="#172033">Q1</text>
+    <text x="398" y="964" font-size="20" fill="#172033">Q2</text>
+    <text x="558" y="964" font-size="20" fill="#172033">Q3</text>
+    <text x="718" y="964" font-size="20" fill="#172033">Q4</text>
+    <text x="228" y="830" font-size="19" fill="#1d4ed8">98%</text>
+    <text x="388" y="785" font-size="19" fill="#1d4ed8">103%</text>
+    <text x="548" y="735" font-size="19" fill="#1d4ed8">108%</text>
+    <text x="708" y="680" font-size="19" fill="#1d4ed8">112%</text>
+    <rect x="560" y="585" width="260" height="56" rx="10" fill="#eef5ff"/>
+    <line x1="584" y1="613" x2="628" y2="613" stroke="#2563eb" stroke-width="7"/>
+    <text x="646" y="621" font-size="18" fill="#334155">Net revenue retention</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="900" y="610" width="568" height="310" rx="14" fill="#172033"/>
+    <text x="936" y="664" font-size="22" font-weight="700" fill="#ffffff">Key interpretation</text>
+    <text x="936" y="720" font-size="21" fill="#dbeafe">The line rises every quarter.</text>
+    <text x="936" y="760" font-size="21" fill="#dbeafe">Q4 exceeds the target by 7 points.</text>
+    <text x="936" y="800" font-size="21" fill="#dbeafe">Expansion is the main growth driver.</text>
+    <text x="936" y="854" font-size="18" fill="#93c5fd">Decision: protect expansion workflows</text>
+  </g>
+
+  <text x="132" y="1050" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172033">Operating signals</text>
+  <text x="132" y="1086" font-family="Arial, sans-serif" font-size="19" fill="#5d6b82">The table combines measurable performance with operational risk.</text>
+
+  <g font-family="Arial, sans-serif" font-size="19">
+    <rect x="132" y="1130" width="1336" height="58" fill="#eaf0f8"/>
+    <text x="160" y="1167" font-weight="700" fill="#334155">Channel</text>
+    <text x="530" y="1167" font-weight="700" fill="#334155">Volume</text>
+    <text x="760" y="1167" font-weight="700" fill="#334155">Resolution time</text>
+    <text x="1110" y="1167" font-weight="700" fill="#334155">Risk</text>
+    <line x1="132" y1="1188" x2="1468" y2="1188" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="160" y="1242" fill="#172033">Self-serve</text>
+    <text x="530" y="1242" fill="#172033">62%</text>
+    <text x="760" y="1242" fill="#172033">4.2 min</text>
+    <text x="1110" y="1242" fill="#15803d">Low</text>
+    <line x1="132" y1="1264" x2="1468" y2="1264" stroke="#e3e8f0"/>
+    <text x="160" y="1318" fill="#172033">Human support</text>
+    <text x="530" y="1318" fill="#172033">28%</text>
+    <text x="760" y="1318" fill="#172033">18.5 min</text>
+    <text x="1110" y="1318" fill="#b45309">Medium</text>
+    <line x1="132" y1="1340" x2="1468" y2="1340" stroke="#e3e8f0"/>
+    <text x="160" y="1394" fill="#172033">Escalation</text>
+    <text x="530" y="1394" fill="#172033">10%</text>
+    <text x="760" y="1394" fill="#172033">2.6 hr</text>
+    <text x="1110" y="1394" fill="#b91c1c">High</text>
+    <rect x="132" y="1428" width="1336" height="2" fill="#cbd5e1"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="132" y="1500" width="650" height="270" rx="14" fill="#f8fafc" stroke="#d9e0ea" stroke-width="2"/>
+    <text x="168" y="1552" font-size="26" font-weight="700" fill="#172033">Metric definition</text>
+    <text x="168" y="1600" font-size="20" fill="#53637d">Net revenue retention</text>
+    <text x="168" y="1668" font-size="27" fill="#172033">NRR = (S + E - C - Ch) / S</text>
+    <text x="168" y="1720" font-size="18" fill="#5d6b82">S: starting MRR   E: expansion</text>
+    <text x="168" y="1748" font-size="18" fill="#5d6b82">C: contraction   Ch: churn</text>
+
+    <rect x="818" y="1500" width="650" height="270" rx="14" fill="#f8fafc" stroke="#d9e0ea" stroke-width="2"/>
+    <text x="854" y="1552" font-size="26" font-weight="700" fill="#172033">Knowledge workflow</text>
+    <rect x="854" y="1610" width="116" height="58" rx="10" fill="#dbeafe"/>
+    <text x="879" y="1647" font-size="19" fill="#1d4ed8">Import</text>
+    <line x1="970" y1="1639" x2="1016" y2="1639" stroke="#64748b" stroke-width="3"/>
+    <polygon points="1016,1639 1002,1631 1002,1647" fill="#64748b"/>
+    <rect x="1020" y="1610" width="132" height="58" rx="10" fill="#dcfce7"/>
+    <text x="1043" y="1647" font-size="19" fill="#047857">Understand</text>
+    <line x1="1152" y1="1639" x2="1198" y2="1639" stroke="#64748b" stroke-width="3"/>
+    <polygon points="1198,1639 1184,1631 1184,1647" fill="#64748b"/>
+    <rect x="1202" y="1610" width="106" height="58" rx="10" fill="#fef3c7"/>
+    <text x="1224" y="1647" font-size="19" fill="#a16207">Search</text>
+    <line x1="1308" y1="1639" x2="1354" y2="1639" stroke="#64748b" stroke-width="3"/>
+    <polygon points="1354,1639 1340,1631 1340,1647" fill="#64748b"/>
+    <rect x="1358" y="1610" width="92" height="58" rx="10" fill="#ede9fe"/>
+    <text x="1377" y="1647" font-size="19" fill="#6d28d9">Act</text>
+    <text x="854" y="1720" font-size="18" fill="#5d6b82">Each visual state becomes searchable knowledge.</text>
+
+    <rect x="132" y="1840" width="1336" height="220" rx="14" fill="#111827"/>
+    <text x="168" y="1892" font-size="24" font-weight="700" fill="#ffffff">Workspace / Failed sync</text>
+    <rect x="168" y="1928" width="540" height="74" rx="10" fill="#1f2937" stroke="#475569"/>
+    <circle cx="204" cy="1965" r="14" fill="#ef4444"/>
+    <text x="236" y="1972" font-size="20" fill="#f8fafc">Customer export · 83% complete</text>
+    <text x="760" y="1954" font-size="19" fill="#fca5a5">Error: destination unavailable</text>
+    <text x="760" y="1990" font-size="18" fill="#cbd5e1">Retry after reconnecting the workspace.</text>
+    <rect x="1280" y="1934" width="136" height="58" rx="10" fill="#2563eb"/>
+    <text x="1314" y="1971" font-size="19" fill="#ffffff">Retry</text>
+  </g>
+
+  <text x="132" y="2100" font-family="Arial, sans-serif" font-size="17" fill="#7a8799">Self-authored demo input. No private or third-party document content.</text>
+</svg>
