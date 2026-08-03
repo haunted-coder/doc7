@@ -16,6 +16,67 @@ No required OCR stack. No document-processing service lock-in.
 
 ## Quick Start
 
+Install doc7, start a local vision model in LM Studio or Ollama, then convert a
+document:
+
+```bash
+# macOS or Linux
+curl -fsSL https://raw.githubusercontent.com/magicrew/doc7/main/scripts/install.sh | bash
+
+# Windows PowerShell
+irm https://raw.githubusercontent.com/magicrew/doc7/main/scripts/install.ps1 | iex
+
+# Convert a document
+doc7 report.pdf
+```
+
+The first run discovers the local model endpoint and saves the selected model
+on this machine. For a remote endpoint, configure it with `doc7 setup`.
+
+## Understand Complex Pages
+
+[![doc7 turns Attention Is All You Need into AI-ready Markdown](./examples/attention-is-all-you-need/showcase.webp)](./examples/attention-is-all-you-need/input.webp)
+
+One raster-only page from *Attention Is All You Need*. No text layer. doc7
+recovers the paper identity, Figure 2, the displayed equation, the scaling
+rationale, the technical footnote, and the ordered relationships inside both
+attention diagrams as searchable Markdown.
+
+The same pipeline processes complete papers and multi-page reports, then
+rebuilds the ordered pages into one document.
+
+`doc7` reads the whole page instead of stopping at character extraction. Bring
+any OpenAI-compatible multimodal model, including a private or local deployment.
+There is no required OCR stack and no per-page document-parser fee from doc7.
+
+## Measured on Real Inputs
+
+[![doc7 Visual Understanding Benchmark](./assets/readme/benchmark/benchmark.webp)](./benchmarks/visual-report/README.md)
+
+Two raster-only PDFs. Fifteen machine-checkable visual facts. MarkItDown OCR
+and doc7 used the same `qwen3.5-9b` model through the same local
+OpenAI-compatible endpoint. Docling used its standard local pipeline.
+
+In this run, doc7 recovered **15/15** checked facts, compared with 9/15 for
+MarkItDown with its OCR plugin and 3/15 for Docling's standard pipeline.
+
+## One Pipeline for Every Format
+
+[![doc7 processes every document through one visual-understanding pipeline](./assets/readme/formats/formats.webp)](#supported-inputs)
+
+Different containers enter the same page-understanding pipeline. Text, tables,
+formulas, charts, diagram relationships, image meaning, and visible UI state
+leave as one searchable Markdown document.
+
+## Built Around the CLI
+
+[![doc7 command-line interface on macOS, Linux, and Windows](./assets/readme/cli/cli.webp)](#quick-start)
+
+The same binary provides the interactive CLI, batch processing, model checks,
+MCP, the Go SDK, and the asynchronous HTTP service.
+
+## Detailed Setup and Usage
+
 **Download:** [macOS, Linux, and Windows CLI archives](https://github.com/magicrew/doc7/releases)
 
 Install the latest release without administrator privileges.
@@ -200,27 +261,7 @@ operate a model. doc7 is designed for the opposite case: reuse a local or
 private model, eliminate a recurring document-parser bill, and turn long-term
 document conversion into infrastructure you own.
 
-## High-Complexity Papers, Precise Markdown
-
-[![doc7 turns Attention Is All You Need into AI-ready Markdown](./examples/attention-is-all-you-need/showcase.webp)](./examples/attention-is-all-you-need/input.webp)
-
-One raster-only page from *Attention Is All You Need*. No text layer. doc7
-recovers the paper identity, Figure 2, the displayed equation, the scaling
-rationale, the technical footnote, and the ordered relationships inside both
-attention diagrams as searchable Markdown.
-
-The same pipeline processes complete papers and multi-page reports, then
-rebuilds the ordered pages into one document.
-
-`doc7` reads the whole page instead of stopping at character extraction. Bring any OpenAI-compatible multimodal model, including a private or local deployment. There is no required OCR stack and no per-page document-parser fee from doc7.
-
-## Open Benchmark
-
-[![doc7 Visual Understanding Benchmark](./assets/readme/benchmark/benchmark.webp)](./benchmarks/visual-report/README.md)
-
-Two raster-only PDFs. Fifteen machine-checkable visual facts. MarkItDown OCR
-and doc7 used the same `qwen3.5-9b` model through the same local
-OpenAI-compatible endpoint. Docling used its standard local pipeline.
+## Open Benchmark Details
 
 | System | Attention paper | Visual report | Combined | Raw Markdown |
 | --- | ---: | ---: | ---: | ---: |
@@ -253,14 +294,6 @@ page 4 of *Attention Is All You Need* and is excluded from doc7's MIT license.
 
 For a pinned large-scale evaluation, use the [olmOCR-Bench adapter](./benchmarks/olmocr/README.md). It supports the upstream 1,403-PDF / 7,010-fact suite without redistributing its third-party documents; doc7 does not claim a full-suite ranking until a complete pinned run is published.
 
-## One Pipeline, Every Document
-
-[![doc7 processes every document through one visual-understanding pipeline](./assets/readme/formats/formats.webp)](#supported-inputs)
-
-Different containers enter the same page-understanding pipeline. Text,
-tables, formulas, charts, diagram relationships, image meaning, and visible UI
-state leave as one searchable Markdown document.
-
 ## A Different Architecture
 
 | Primary approach | Representative projects | What happens | What you operate |
@@ -271,13 +304,6 @@ state leave as one searchable Markdown document.
 | Full-page visual understanding | **doc7** | Pages are rendered and reconstructed by your multimodal model | A cross-platform CLI, Go SDK, MCP tool, asynchronous HTTP service, and your existing model endpoint |
 
 The model remains your choice. `doc7` does not prescribe a model size or claim quality that has not been measured. With a private open model, there is no required external document-processing service and no doc7 usage quota.
-
-## The CLI Is The Product
-
-[![doc7 command-line interface on macOS, Linux, and Windows](./assets/readme/cli/cli.webp)](#quick-start)
-
-The same binary provides the interactive CLI, batch processing, model checks,
-MCP, the Go SDK, and the asynchronous HTTP service.
 
 ## Model, Dependency, and Recovery Workflow
 

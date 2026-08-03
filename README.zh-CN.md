@@ -16,6 +16,60 @@ doc7 通过你自己的 OpenAI 兼容多模态模型，把 PDF、Office、扫描
 
 ## 快速开始
 
+安装 doc7，启动 LM Studio 或 Ollama 中的本地视觉模型，然后转换文档：
+
+```bash
+# macOS 或 Linux
+curl -fsSL https://raw.githubusercontent.com/magicrew/doc7/main/scripts/install.sh | bash
+
+# Windows PowerShell
+irm https://raw.githubusercontent.com/magicrew/doc7/main/scripts/install.ps1 | iex
+
+# 转换文档
+doc7 报告.pdf
+```
+
+首次运行会自动发现本地模型接口，并把选择保存到当前机器。需要使用远程接口
+时，运行 `doc7 setup` 配置即可。
+
+## 复杂页面，也能完整理解
+
+[![doc7 将 Attention Is All You Need 转换为 AI 可用的 Markdown](./examples/attention-is-all-you-need/showcase.zh-CN.webp)](./examples/attention-is-all-you-need/input.webp)
+
+《Attention Is All You Need》中的一页纯图片 PDF，没有文本层。doc7 把论文身份、
+Figure 2、展示公式、缩放原因、技术脚注，以及两张注意力图内部的顺序和并行关系，
+完整转换为可检索的 Markdown。
+
+同一套流程也可以处理完整论文和多页报告，再按原始页序重建为一份文档。
+
+doc7 读取整页信息，而不止字符。你可以接入任何兼容 OpenAI 接口的多模态模型，
+包括本地模型和私有化部署。doc7 不要求单独搭建 OCR 技术栈，也不收取按页处理费用。
+
+## 用真实输入衡量效果
+
+[![doc7 视觉理解 Benchmark](./assets/readme/benchmark/benchmark.zh-CN.webp)](./benchmarks/visual-report/README.md)
+
+两份纯图片 PDF，15 项可机器校验的视觉事实。MarkItDown OCR 与 doc7 通过同一个
+本地 OpenAI 兼容接口使用同一个 `qwen3.5-9b` 模型，Docling 使用标准本地流水线。
+
+这次运行中，doc7 恢复了 **15/15** 项事实；MarkItDown 加 OCR 为 9/15，Docling
+标准流水线为 3/15。
+
+## 一套流程处理所有格式
+
+[![doc7 使用一套视觉理解流程处理一切文档](./assets/readme/formats/formats.zh-CN.webp)](#支持的输入)
+
+不同格式进入同一套页面理解流程。正文、表格、公式、图表、图示关系、图像含义和
+可见界面状态，最终组成一份可检索的 Markdown 文档。
+
+## 从命令行直接开始
+
+[![doc7 在 macOS、Linux 和 Windows 上的命令行界面](./assets/readme/cli/cli.zh-CN.webp)](#快速开始)
+
+同一个二进制文件提供交互式 CLI、批量处理、模型检查、MCP、Go SDK 和异步 HTTP 服务。
+
+## 详细配置与使用
+
 **直接下载：** [macOS、Linux 和 Windows CLI 压缩包](https://github.com/magicrew/doc7/releases)
 
 不需要管理员权限，直接安装最新发行版。
@@ -176,25 +230,7 @@ API 通常按页、图片或功能调用计费；本地 doc7 的主要成本是�
 选择：复用本地或私有模型，取消持续累加的文档解析账单，把长期文档转换能力
 变成自己拥有的基础设施。
 
-## 高复杂度论文，也能精准转换
-
-[![doc7 将 Attention Is All You Need 转换成 AI 可用的 Markdown](./examples/attention-is-all-you-need/showcase.zh-CN.webp)](./examples/attention-is-all-you-need/input.webp)
-
-《Attention Is All You Need》中的一页纯图片 PDF，没有文本层。doc7
-把论文身份、Figure 2、展示公式、缩放原因、技术脚注，以及两张注意力图
-内部的顺序和并行关系，完整转换为可检索的 Markdown。
-
-同一套流程也可以处理完整论文和多页报告，再按原始页序重建为一份文档。
-
-doc7 读取整页信息，而不止字符。你可以接入任何兼容 OpenAI 接口的多模态模型，包括本地模型和私有化部署。doc7 不要求单独搭建 OCR 技术栈，也不收取按页处理费用。
-
-## 公开 Benchmark
-
-[![doc7 视觉理解 Benchmark](./assets/readme/benchmark/benchmark.zh-CN.webp)](./benchmarks/visual-report/README.md)
-
-两份纯图片 PDF，15 项可机器校验的视觉事实。MarkItDown OCR 与 doc7
-通过同一个本地 OpenAI 兼容接口使用同一个 `qwen3.5-9b` 模型，Docling
-使用标准本地流水线。
+## 公开 Benchmark 详情
 
 | 系统 | Attention 论文 | 视觉报告 | 合计 | 原始 Markdown |
 | --- | ---: | ---: | ---: | ---: |
@@ -223,13 +259,6 @@ doc7 的 MIT 许可证范围。[查看来源和授权记录](./examples/attentio
 
 需要大规模评估时，使用 [olmOCR-Bench 适配器](./benchmarks/olmocr/README.md)。它支持上游固定版本的 1,403 份 PDF、7,010 个机器可判定事实，不把第三方文档打包进 doc7；在完整、固定版本的运行完成前，doc7 不发布全量排名结论。
 
-## 一套流程，处理一切文档
-
-[![doc7 使用一套视觉理解流程处理一切文档](./assets/readme/formats/formats.zh-CN.webp)](#支持的输入)
-
-不同格式进入同一套页面理解流程。正文、表格、公式、图表、图示关系、图像
-含义和可见界面状态，最终组成一份可检索的 Markdown 文档。
-
 ## doc7 选择了另一条路线
 
 | 主要路线 | 代表项目 | 处理方式 | 需要维护的东西 |
@@ -240,13 +269,6 @@ doc7 的 MIT 许可证范围。[查看来源和授权记录](./examples/attentio
 | 整页视觉理解 | **doc7** | 先把页面渲染成图像，再交给你的多模态模型重建 Markdown | 跨平台 CLI、Go SDK、MCP 工具、异步 HTTP 服务和已有模型接口 |
 
 模型由用户决定。doc7 不预设模型规模，也不会宣传没有实测过的模型效果。接入私有化开源模型后，不再需要购买专门的文档解析服务，也没有 doc7 处理额度。
-
-## 命令行就是产品入口
-
-[![doc7 在 macOS、Linux 和 Windows 上的命令行界面](./assets/readme/cli/cli.zh-CN.webp)](#快速开始)
-
-同一个二进制文件提供交互式 CLI、批量处理、模型检查、MCP、Go SDK 和异步
-HTTP 服务。
 
 ## 模型、依赖与失败恢复
 
