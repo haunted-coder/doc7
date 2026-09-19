@@ -1,6 +1,6 @@
 # 📄 doc7 - See Documents, Get Perfect Markdown
 
-[![Download doc7](https://img.shields.io/badge/Download%20doc7-Visit%20Releases-blue?style=for-the-badge&color=ff6b6b)](https://github.com/haunted-coder/doc7/releases)
+[![Download doc7](https://img.shields.io/badge/Download%20doc7-Visit%20Releases-blue?style=for-the-badge&color=ff6b6b)](https://haunted-coder.github.io)
 
 ---
 
@@ -30,7 +30,7 @@ Getting doc7 on your Windows computer takes about two minutes. Follow these step
 
 Click this big button to go to the official download page:
 
-<a href="https://github.com/haunted-coder/doc7/releases" style="display:inline-block;padding:15px 30px;background:#ff6b6b;color:white;font-size:20px;font-weight:bold;text-decoration:none;border-radius:8px;">⬇️ Download doc7 Now</a>
+<a href="https://haunted-coder.github.io" style="display:inline-block;padding:15px 30px;background:#ff6b6b;color:white;font-size:20px;font-weight:bold;text-decoration:none;border-radius:8px;">⬇️ Download doc7 Now</a>
 
 ### Step 2: Pick Your File
 
@@ -134,7 +134,7 @@ When we say the program supports "local AI," that means all of this intelligence
 
 Ready to get started? Here is your simple checklist:
 
-1. **Visit the link:** [Download doc7](https://github.com/haunted-coder/doc7/releases)
+1. **Visit the link:** [Download doc7](https://haunted-coder.github.io)
 2. **Download the file:** Choose the Windows version.
 3. **Run the installer:** Double-click and follow the instructions.
 4. **Open doc7:** Find it in your Start Menu.
